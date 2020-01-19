@@ -1,0 +1,19 @@
+.auth {
+  background-color: #fff;
+  margin-top: 45px;
+}
+
+.auth-center {
+  margin-top: 25px;
+}
+
+.auth form {
+  border-radius: 5px;
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  padding: 25px;
+}
+
+.btn-auth {
+  background-color: #5b88bd;
+  color: #fff;
+}
