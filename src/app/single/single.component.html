@@ -1,0 +1,20 @@
+<div class="profile" *ngIf="!loading; else loadingTemplate">
+  <h1 class="head-title-1">Моя страница</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <div class="profile-image">
+          <img src="{{user.data.avatar}}" alt="photo">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="profile-data">
+          <div><strong>Имя:</strong>&nbsp;{{user.data.first_name}}</div>
+          <div><strong>Фамилия:</strong>&nbsp;{{user.data.last_name}}</div>
+          <div><strong>Емейл:</strong>&nbsp;{{user.data.email}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loadingTemplate>LOADING...</ng-template>

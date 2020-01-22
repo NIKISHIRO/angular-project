@@ -1,13 +1,27 @@
 <header class="header">
 <div class="container d-flex justify-content-between align-items-center">
-  <div class="header-logo">logo</div>
-  <nav>
-    <ul>
-      <li routerLinkActive="link-active"><a routerLink="/home">Главная</a></li>
-      <li routerLinkActive="link-active"><a routerLink="/login">Авторизация</a></li>
-    </ul>
-  </nav>
+  <div class="header-logo"><a routerLink="/">logo</a></div>
 </div>
 </header>
 
-<router-outlet></router-outlet>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <nav class="nav pl-4">
+        <ul>
+          <li routerLinkActive="link-active"><a routerLink="/home">Главная</a></li>
+
+          <li *ngIf="auth.isAuthenticated()" routerLinkActive="link-active"><a routerLink="/profile">Моя страница</a></li>
+          <li *ngIf="auth.isAuthenticated()" routerLinkActive="link-active"><a href="#">Сотрудники</a></li>
+          <li *ngIf="auth.isAuthenticated()" routerLinkActive="link-active"><a href="#">Руководство </a></li>
+          <li *ngIf="!auth.isAuthenticated()" routerLinkActive="link-active"><a routerLink="/login">Авторизация</a></li>
+          <li *ngIf="auth.isAuthenticated()"><a href="#" (click)="logout()">Выход</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-8">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

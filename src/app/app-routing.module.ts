@@ -3,12 +3,15 @@ import {MainLayoutComponent} from "./shared/components/main-layout/main-layout.c
 import {HomePageComponent} from "./home-page/home-page.component";
 import {NgModule} from "@angular/core";
 import {LoginPageComponent} from "./login-page/login-page.component";
+import {ProfilePageComponent} from "./profile-page/profile-page.component";
 
 const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: 'home', component: HomePageComponent},
+      {path: 'profile', component: ProfilePageComponent},
+      {path: 'profile/:id', component: ProfilePageComponent},
       {path: 'login', component: LoginPageComponent}
     ]
   },

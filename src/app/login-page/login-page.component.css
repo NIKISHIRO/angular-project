@@ -17,3 +17,12 @@
   background-color: #5b88bd;
   color: #fff;
 }
+
+
+/* временные */
+
+.user {
+  border: 1px solid #c0c0c0;
+  margin: 10px 0;
+  padding: 15px;
+}

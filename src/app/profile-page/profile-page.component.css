@@ -1,0 +1,13 @@
+.profile-image {
+  background-color: #fff;
+}
+
+.profile-image {
+  display: inline-block;
+  padding: 15px;
+}
+
+.profile-data {
+  padding: 15px;
+  background-color: #fff;
+}

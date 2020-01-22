@@ -1,0 +1,10 @@
+<div *ngIf="isAuth; else authBlock">
+  <app-single [account-id]="id"></app-single>
+</div>
+<ng-template #authBlock>
+  <ngb-alert *ngIf="alert" type="danger" (close)="close()">Вы не авторизованы.</ngb-alert>
+</ng-template>
+
+<div class="friends">
+  <h2>Друзья</h2>
+</div>

@@ -1,51 +1,48 @@
-<div class="container">
-  <h1 class="text-center auth-center">Авторизация</h1>
+<h1 class="text-center">Авторизация</h1>
 
-  <div class="row">
-    <div class="col-4">
+<div class="row">
+  <div class="col-12" *ngFor="let alert of alerts">
+    <ngb-alert type="danger" (close)="closeAlert(alert)">{{ alert }}</ngb-alert>
+  </div>
 
-      <div class="auth">
-        <form [formGroup]="authForm">
+  <div class="col-4">
 
-          <div class="form-group">
-            <input
-              type="email"
-              class="form-control"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-              formControlName="email"
-            >
-            <div class="validators" *ngIf="authForm.get('email').invalid && authForm.get('email').touched">
-              <small class="form-text text-danger">Введите корректный емейл.</small>
-            </div>
-          </div>
+    <div class="auth">
+      <form [formGroup]="authForm">
 
-          <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" formControlName="password">
-            <div class="validators" *ngIf="authForm.get('password').invalid && authForm.get('password').touched">
-
-              <small class="form-text text-danger" *ngIf="authForm.get('password').errors.required">
-                Это поле обязательно.
-              </small>
-
-              <small class="form-text text-danger" *ngIf="authForm.get('password').errors.minlength">
-                Пароль не должен быть меньше {{authForm.get('password').errors.minlength.requiredLength}} символов.
-              </small>
-
-            </div>
-          </div>
-
-          <button
-            type="submit"
-            class="btn btn-auth"
-            (click)="submit()"
-            [disabled]="authForm.invalid"
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+            formControlName="email"
           >
-            Авторизоваться
-          </button>
+          <div class="validators" *ngIf="authForm.get('email').invalid && authForm.get('email').touched">
+            <small class="form-text text-danger">Введите корректный емейл.</small>
+          </div>
+        </div>
 
-        </form>
-      </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" formControlName="password">
+          <div class="validators" *ngIf="authForm.get('password').invalid && authForm.get('password').touched">
+
+            <small class="form-text text-danger" *ngIf="authForm.get('password').errors.required">
+              Это поле обязательно.
+            </small>
+
+            <small class="form-text text-danger" *ngIf="authForm.get('password').errors.minlength">
+              Пароль не должен быть меньше {{authForm.get('password').errors.minlength.requiredLength}} символов.
+            </small>
+
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-auth" (click)="submit()" [disabled]="authForm.invalid">
+          Авторизоваться
+        </button>
+
+      </form>
     </div>
   </div>
 </div>
