@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../shared/auth.service";
-import {Auth} from "../shared/interfaces";
 import {NgbAlert} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
@@ -19,8 +18,8 @@ export class ProfilePageComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.isAuthenticated()) {
-      const auth: Auth = this.authService.getUserData();
-      this.id = auth.id;
+      // const token = this.authService.getToken();
+      this.id = 4;
       this.isAuth = true;
     } else {
       this.alert = 'Вы не авторизованы.';

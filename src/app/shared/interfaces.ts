@@ -1,5 +1,4 @@
 export interface Auth {
-  id: 4;
   token: string;
 }
 

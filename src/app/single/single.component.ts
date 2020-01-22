@@ -19,13 +19,13 @@ export class SingleComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getUser(this.id);
+    this.getUserById(this.id);
   }
 
-  getUser(id: number) {
+  getUserById(id: number) {
     this.loading = true;
     if (id) {
-      this.userService.getUser(id).subscribe(user => {
+      this.userService.getUserById(id).subscribe(user => {
         this.loading = false;
         this.user = user;
       });

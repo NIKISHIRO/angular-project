@@ -4,6 +4,7 @@ import {HomePageComponent} from "./home-page/home-page.component";
 import {NgModule} from "@angular/core";
 import {LoginPageComponent} from "./login-page/login-page.component";
 import {ProfilePageComponent} from "./profile-page/profile-page.component";
+import {UserPageComponent} from "./user-page/user-page.component";
 
 const routes: Routes = [
   {
@@ -11,7 +12,7 @@ const routes: Routes = [
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: 'home', component: HomePageComponent},
       {path: 'profile', component: ProfilePageComponent},
-      {path: 'profile/:id', component: ProfilePageComponent},
+      {path: 'user/:id', component: UserPageComponent},
       {path: 'login', component: LoginPageComponent}
     ]
   },

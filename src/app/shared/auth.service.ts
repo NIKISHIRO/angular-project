@@ -2,9 +2,9 @@ import {Injectable} from "@angular/core";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {Page, User} from "./classes";
 import {Observable, Subscription, throwError} from "rxjs";
-import {Auth} from "./interfaces";
 import {catchError} from "rxjs/operators";
 import {root} from "rxjs/internal-compatibility";
+import {Auth} from "./interfaces";
 
 @Injectable()
 export class AuthService {
@@ -36,13 +36,10 @@ export class AuthService {
   }
 
   setAuth(auth: Auth): void {
-    localStorage.setItem('auth', JSON.stringify({
-      token: auth.token,
-      id: 4
-    }));
+    localStorage.setItem('auth', auth.token);
   }
 
-  getUserData(): Auth {
-    return JSON.parse(localStorage.getItem('auth'));
+  getToken(): string {
+    return localStorage.getItem('token');
   }
 }
