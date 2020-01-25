@@ -13,8 +13,10 @@ export class CollaboratorsPageComponent implements OnInit {
   currentUser: User;
   users: User[];
 
-  isSuccess: boolean = false;
-  formModal;
+  formEditModal;
+  formDeleteModal;
+
+  alert: string = '';
 
   constructor(
     private modalService: NgbModal,
@@ -25,36 +27,49 @@ export class CollaboratorsPageComponent implements OnInit {
     this.getAllUsers();
   }
 
-  onEditClick(user: User, template) {
-    this.currentUser = {...user};
-    this.formModal = this.modalService.open(template);
-  }
-
-  onDeleteClick(user: User) {
-    console.log(user.id);
-  }
-
   getAllUsers(): void {
     this.userService.getAllUsers().subscribe(page => {
       this.users = page.data;
     });
   }
 
-  deleteUserById(id: number) {
-    this.userService.deleteUserById(id);
+  onEditClick(user: User, template) {
+    this.currentUser = {...user};
+    this.formEditModal = this.modalService.open(template);
   }
 
-  save(user: User) {
-    this.userService.updateUser(user)
+  onDeleteClick(user: User, template) {
+    this.currentUser = {...user};
+    this.formDeleteModal = this.modalService.open(template);
+  }
+
+  save() {
+    this.userService.updateUser(this.currentUser)
       .subscribe(data => {
         console.log('data', data);
-        this.isSuccess = true;
-        setTimeout(() => this.isSuccess = false, 5000);
+        this.alert = 'Данные пользователя успешно измененны!';
+        setTimeout(() => this.alert = '', 5000);
       });
   }
 
-  close() {
-    this.formModal.close();
-    this.isSuccess = false;
+  modalEditClose() {
+    this.formEditModal.close();
+  }
+
+  modalDeleteClose() {
+    this.formDeleteModal.close();
+  }
+
+  modalDeleteConfirm() {
+    this.formDeleteModal.close();
+
+    const idx = this.users.findIndex((u) => u.id === this.currentUser.id);
+    this.users.splice(idx, 1);
+
+    this.userService.deleteUserById(this.currentUser.id).subscribe(data => {
+      console.log(data);
+      this.alert = 'Пользователь успешно удален!';
+      setTimeout(() => this.alert = '', 5000);
+    });
   }
 }

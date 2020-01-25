@@ -1,11 +1,16 @@
+<!--Уведомление-->
+<div class="success-block text-success" *ngIf="alert">
+  <ngb-alert type="success" (close)="(alert = '')">{{ alert }}</ngb-alert>
+</div>
+<!--/Уведомление-->
+
 <h1 class="head-title-1">Все сотрудники</h1>
 <div class="collaborators">
-
+  <!--Шаблон формы редактирвоания-->
   <ng-template #collaboratorFormEdit>
-
     <div class="modal-header">
-      <h4 class="modal-title">Редактирвоание</h4>
-      <button type="button" class="close" aria-label="Close" (click)="formModal.close()">
+      <h4 class="modal-title">Редактирование</h4>
+      <button type="button" class="close" aria-label="Close" (click)="formEditModal.close()">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -59,11 +64,33 @@
       </div>
     </div>
     <div class="modal-footer">
-      <div class="success-block text-success" *ngIf="isSuccess">УСПЕШНО!</div>
-      <button type="submit" class="btn btn-success btn-edit" (click)="save(currentUser)">Сохранить</button>
-      <button type="button" class="btn btn-outline-dark" (click)="close()">Назад</button>
+        <button type="button" class="btn btn-outline-dark" (click)="modalEditClose()">Отмена</button>
+        <button type="submit" class="btn btn-success btn-edit" (click)="save()">Сохранить</button>
     </div>
   </ng-template>
+  <!--/Шаблон формы редактирвоания-->
+
+  <!--  Шаблон подтверждения удаления-->
+  <ng-template #collaboratorFormDelete>
+
+    <div class="modal-header">
+      <h4 class="modal-title">Удаление</h4>
+      <button type="button" class="close" aria-label="Close" (click)="formEditModal.close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      Вы уверены, что хотите удалить этого пользователя?
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modalDeleteClose()">Отмена</button>
+      <button type="submit" class="btn btn-success btn-edit" (click)="modalDeleteConfirm()">Подтвердить</button>
+    </div>
+
+  </ng-template>
+  <!--  /Шаблон подтверждения удаления-->
 
   <div class="container">
     <div class="row text-center">
@@ -71,7 +98,7 @@
         <app-user
           [user]="user"
           (editClick)="onEditClick($event, collaboratorFormEdit)"
-          (deleteClick)="onDeleteClick($event)"
+          (deleteClick)="onDeleteClick($event, collaboratorFormDelete)"
         ></app-user>
       </div>
     </div>

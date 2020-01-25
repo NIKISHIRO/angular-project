@@ -26,7 +26,6 @@ export class CollaboratorComponent implements OnInit {
     this.deleteClick.emit(this.user);
   }
 
-
   goToPage($event, id: number) {
     $event.preventDefault();
     this.router.navigate(['user', id.toString()]);

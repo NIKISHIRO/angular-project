@@ -16,6 +16,11 @@
 }
 
 .success-block {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  z-index: 1060 ;
+  transform: translate(-50%, 10px);
   margin-right: 25px;
   font-weight: 700;
 }
