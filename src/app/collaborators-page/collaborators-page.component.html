@@ -1,0 +1,80 @@
+<h1 class="head-title-1">Все сотрудники</h1>
+<div class="collaborators">
+
+  <ng-template #collaboratorFormEdit>
+
+    <div class="modal-header">
+      <h4 class="modal-title">Редактирвоание</h4>
+      <button type="button" class="close" aria-label="Close" (click)="formModal.close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="collaborator-form" *ngIf="currentUser">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <form class="collaborator-form">
+                <div class="user-form__avatar">
+                  <img src="{{currentUser.avatar}}" alt="Avatar">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input
+                    name="email"
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter email"
+                    [(ngModel)]="currentUser.email"
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="firstname">First Name</label>
+                  <input
+                    name="firstname"
+                    type="text"
+                    class="form-control"
+                    id="firstname"
+                    placeholder="First Name"
+                    [(ngModel)]="currentUser.first_name"
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="lastname">Last Name</label>
+                  <input
+                    name="lastname"
+                    type="text"
+                    class="form-control"
+                    id="lastname"
+                    placeholder="First Name"
+                    [(ngModel)]="currentUser.last_name"
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="success-block text-success" *ngIf="isSuccess">УСПЕШНО!</div>
+      <button type="submit" class="btn btn-success btn-edit" (click)="save(currentUser)">Сохранить</button>
+      <button type="button" class="btn btn-outline-dark" (click)="close()">Назад</button>
+    </div>
+  </ng-template>
+
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-4" *ngFor="let user of users">
+        <app-user
+          [user]="user"
+          (editClick)="onEditClick($event, collaboratorFormEdit)"
+          (deleteClick)="onDeleteClick($event)"
+        ></app-user>
+      </div>
+    </div>
+  </div>
+
+</div>

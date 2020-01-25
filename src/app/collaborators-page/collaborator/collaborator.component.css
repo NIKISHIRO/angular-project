@@ -1,0 +1,39 @@
+.user {
+  background-color: #fff;
+  display: inline-block;
+  text-align: center;
+  padding: 15px;
+  margin: 5px;
+  min-width: 300px;
+}
+
+.user-avatar img {
+  display: inline-block;
+}
+
+.user-name {
+  padding: 5px 0;
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.user-name a {
+  font-weight: 700;
+  color: #000;
+}
+
+.user-buttons {
+  margin-top: 10px;
+}
+
+.btn-open, .btn-edit, .btn-remove {
+  min-width: 150px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.user-avatar img {
+  border-radius: 100%;
+  border: 1px solid #C0C0C0;
+}

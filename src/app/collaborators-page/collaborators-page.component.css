@@ -1,0 +1,21 @@
+.form-block {
+  margin: 45px 0;
+}
+
+.user-form__avatar {
+  text-align: center;
+}
+
+.user-form__avatar img {
+  border-radius: 100%;
+  border: 1px solid #C0C0C0;
+}
+
+.collaborator-form {
+  padding: 10px;
+}
+
+.success-block {
+  margin-right: 25px;
+  font-weight: 700;
+}

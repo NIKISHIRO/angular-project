@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
 import {UserService} from "../shared/user.service";
 import {AuthService} from "../shared/auth.service";
-import {User} from "../shared/interfaces";
+import {User} from "../shared/classes";
 
 @Component({
   selector: 'app-single',

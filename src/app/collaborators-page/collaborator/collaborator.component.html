@@ -1,0 +1,16 @@
+<div class="user">
+  <div class="user-avatar">
+    <img src="{{user.avatar}}" alt="avatar">
+  </div>
+  <div class="user-name">
+    <span>{{user.first_name }}&nbsp;{{user.last_name }}</span>
+  </div>
+  <div class="user-email">Email: {{user.email}}</div>
+
+  <div class="user-buttons">
+    <div><button (click)="goToPage($event, user.id)" class="btn btn-success btn-open">Открыть</button></div>
+    <div><button class="btn btn-warning btn-edit" (click)="onEditClick()">Редактировать</button></div>
+    <div><button class="btn btn-danger btn-remove" (click)="onDeleteClick()">Удалить</button></div>
+  </div>
+
+</div>

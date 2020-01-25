@@ -12,7 +12,7 @@
           <li routerLinkActive="link-active"><a routerLink="/home">Главная</a></li>
 
           <li *ngIf="auth.isAuthenticated()" routerLinkActive="link-active"><a routerLink="/profile">Моя страница</a></li>
-          <li *ngIf="auth.isAuthenticated()" routerLinkActive="link-active"><a href="#">Сотрудники</a></li>
+          <li *ngIf="auth.isAuthenticated()" routerLinkActive="link-active"><a routerLink="/collaborators">Сотрудники</a></li>
           <li *ngIf="auth.isAuthenticated()" routerLinkActive="link-active"><a href="#">Руководство </a></li>
           <li *ngIf="!auth.isAuthenticated()" routerLinkActive="link-active"><a routerLink="/login">Авторизация</a></li>
           <li *ngIf="auth.isAuthenticated()"><a href="#" (click)="logout()">Выход</a></li>

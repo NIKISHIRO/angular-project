@@ -5,14 +5,18 @@ import {NgModule} from "@angular/core";
 import {LoginPageComponent} from "./login-page/login-page.component";
 import {ProfilePageComponent} from "./profile-page/profile-page.component";
 import {UserPageComponent} from "./user-page/user-page.component";
+import {CollaboratorsPageComponent} from "./collaborators-page/collaborators-page.component";
+import {PostPageComponent} from "../../../angular-blog/src/app/post-page/post-page.component";
+import {AuthGuard} from "./shared/auth.guard";
 
 const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: 'home', component: HomePageComponent},
-      {path: 'profile', component: ProfilePageComponent},
-      {path: 'user/:id', component: UserPageComponent},
+      {path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuard]},
+      {path: 'user/:id', component: UserPageComponent, canActivate: [AuthGuard]},
+      {path: 'collaborators', component: CollaboratorsPageComponent, canActivate: [AuthGuard]},
       {path: 'login', component: LoginPageComponent}
     ]
   },

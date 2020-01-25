@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {UserService} from "../shared/user.service";
+import {User} from "../shared/classes";
 
 @Component({
   selector: 'app-user-page',
@@ -9,12 +11,13 @@ import {ActivatedRoute} from "@angular/router";
 export class UserPageComponent implements OnInit {
   id: number;
 
-  constructor(activateRoute: ActivatedRoute) {
+  constructor(
+    private activateRoute: ActivatedRoute,
+  ) {
     this.id = activateRoute.snapshot.params['id'];
   }
 
   ngOnInit() {
+
   }
-
-
 }
