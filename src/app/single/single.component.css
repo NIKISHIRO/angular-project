@@ -1,5 +1,6 @@
-.single-image {
+.single {
   background-color: #fff;
+  display: inline-block;
 }
 
 .single-image {
@@ -8,8 +9,8 @@
 }
 
 .single-data {
+  display: inline-block;
   min-height: 158px;
   padding: 15px;
-  background-color: #fff;
 }
 

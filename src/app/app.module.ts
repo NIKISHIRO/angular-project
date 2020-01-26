@@ -11,7 +11,6 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { CollaboratorsPageComponent } from './collaborators-page/collaborators-page.component';
 import { SingleComponent } from './single/single.component';
-import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MainLayoutComponent } from "./shared/components/main-layout/main-layout.component";
 import { CollaboratorComponent } from './collaborators-page/collaborator/collaborator.component';
@@ -20,6 +19,7 @@ import { CollaboratorComponent } from './collaborators-page/collaborator/collabo
 import {AuthService} from "./shared/auth.service";
 import {UserService} from "./shared/user.service";
 import {AuthGuard} from "./shared/auth.guard";
+import { ManagementComponent } from './management/management.component';
 
 
 @NgModule({
@@ -27,12 +27,12 @@ import {AuthGuard} from "./shared/auth.guard";
     AppComponent,
     LoginPageComponent,
     MainLayoutComponent,
-    HomePageComponent,
     ProfilePageComponent,
     SingleComponent,
     UserPageComponent,
     CollaboratorsPageComponent,
     CollaboratorComponent,
+    ManagementComponent,
   ],
   imports: [
     BrowserModule,

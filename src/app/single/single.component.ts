@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
 import {UserService} from "../shared/user.service";
 import {AuthService} from "../shared/auth.service";
-import {User} from "../shared/classes";
+import {singleUser, User} from "../shared/classes";
 
 @Component({
   selector: 'app-single',
@@ -27,7 +27,8 @@ export class SingleComponent implements OnInit {
     if (id) {
       this.userService.getUserById(id).subscribe(user => {
         this.loading = false;
-        this.user = user;
+        console.log('test', user);
+        this.user = user.data;
       });
     }
   }

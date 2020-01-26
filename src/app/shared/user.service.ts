@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Page, User} from "./classes";
+import {Page, singleUser, User} from "./classes";
 
 @Injectable()
 export class UserService {
@@ -11,8 +11,8 @@ export class UserService {
     return this.http.get<Page>('https://reqres.in/api/users');
   }
 
-  getUserById(id: number): Observable<User> {
-      return this.http.get<User>(`https://reqres.in/api/users/${id}`);
+  getUserById(id: number): Observable<singleUser> {
+      return this.http.get<singleUser>(`https://reqres.in/api/users/${id}`);
   }
 
   updateUser(user: User) {

@@ -1,5 +1,4 @@
 <h1 class="head-title-1">Моя страница</h1>
-
 <div *ngIf="isAuth; else authBlock">
   <app-single [account-id]="id"></app-single>
 </div>
@@ -7,17 +6,20 @@
   <ngb-alert *ngIf="alert" type="danger" (close)="close()">Вы не авторизованы.</ngb-alert>
 </ng-template>
 
-<div class="friends">
-  <h2 class="head-title-2">Друзья</h2>
-  <div class="container">
-    <div class="row">
-      <div class="col-3" *ngFor="let friend of friends">
-        <div class="friend">
-          <div class="friend-image">
-            <img src="{{friend.avatar}}" alt="avatar">
-          </div>
-          <div class="friend-name">
-            <a href="#" (click)="goToPage($event, friend.id)">{{friend.first_name}}&nbsp;{{friend.last_name}}</a>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="friends">
+        <h2 class="head-title-2">Друзья</h2>
+
+        <div class="friend" *ngFor="let friend of friends">
+          <div class="friend-block">
+            <div class="friend-image">
+              <img src="{{friend.avatar}}" alt="avatar">
+            </div>
+            <div class="friend-name">
+              <a href="#" (click)="goToPage($event, friend.id)">{{friend.first_name}}&nbsp;{{friend.last_name}}</a>
+            </div>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import {AuthService} from "../../auth.service";
   styleUrls: ['./main-layout.component.css']
 })
 export class MainLayoutComponent implements OnInit {
+  menuActive: boolean = true;
 
   constructor(
     public auth: AuthService,

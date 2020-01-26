@@ -3,7 +3,7 @@
   display: inline-block;
   text-align: center;
   padding: 15px;
-  margin: 5px;
+  margin: 10px;
   min-width: 300px;
 }
 
@@ -36,4 +36,14 @@
 .user-avatar img {
   border-radius: 100%;
   border: 1px solid #C0C0C0;
+}
+
+.user-buttons {
+  opacity: .3;
+  transition: all .3s;
+}
+
+.user:hover .user-buttons {
+  visibility: visible;
+  opacity: 1;
 }

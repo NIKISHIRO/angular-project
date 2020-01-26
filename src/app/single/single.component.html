@@ -1,19 +1,17 @@
-<div class="single" *ngIf="!loading; else loadingTemplate">
-  <div class="container">
-    <div class="row">
-      <div class="col-3">
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="single" *ngIf="!loading; else loadingTemplate">
         <div class="single-image">
-          <img src="{{user.data.avatar}}" alt="photo">
+          <img src="{{user.avatar}}" alt="photo">
         </div>
-      </div>
-      <div class="col-4">
         <div class="single-data">
-          <div><strong>Имя:</strong>&nbsp;{{user.data.first_name}}</div>
-          <div><strong>Фамилия:</strong>&nbsp;{{user.data.last_name}}</div>
-          <div><strong>Емейл:</strong>&nbsp;{{user.data.email}}</div>
+          <div><strong>Имя:</strong>&nbsp;{{user.first_name}}</div>
+          <div><strong>Фамилия:</strong>&nbsp;{{user.last_name}}</div>
+          <div><strong>Емейл:</strong>&nbsp;{{user.email}}</div>
         </div>
       </div>
+      <ng-template #loadingTemplate>LOADING...</ng-template>
     </div>
   </div>
 </div>
-<ng-template #loadingTemplate>LOADING...</ng-template>

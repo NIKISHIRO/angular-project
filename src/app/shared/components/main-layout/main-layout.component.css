@@ -21,6 +21,11 @@
   text-decoration: none;
 }
 
+.nav {
+  display: block;
+  margin: 0 auto;
+}
+
 .header-logo {
   font-family: 'Open Sans', sans-serif;
   margin-left: 15px;
@@ -36,5 +41,52 @@
 }
 
 .link-active {
-  background-color: aliceblue;
+  background-color: #e1e5eb;
+}
+
+.header-menu {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  position: relative;
+  margin: 0 40px;
+  cursor: pointer;
+}
+
+.header-menu span, .header-menu span::before, .header-menu span::after {
+  position: absolute;
+  content: '';
+  background-color: #fff;
+  width: 20px;
+  height: 2px;
+  top: 50%;
+  margin-top: -1px;
+  margin-left: -10px;
+  left: 50%;
+}
+
+.header-menu span::before {
+  transform: translateY(5px);
+}
+
+.header-menu span {
+  transition: all .15s;
+}
+
+.header-menu span::after {
+  transform: translateY(-5px);
+}
+
+.header-menu__active span::before {
+  transform: rotate(45deg);
+  display: block !important;
+}
+
+.header-menu__active span {
+  height: 0;
+}
+
+.header-menu__active span::after {
+  transform: rotate(-45deg);
 }

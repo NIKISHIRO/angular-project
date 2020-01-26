@@ -1,27 +1,29 @@
 <header class="header">
-<div class="container d-flex justify-content-between align-items-center">
-  <div class="header-logo"><a routerLink="/">logo</a></div>
-</div>
+  <div class="container-fluid d-flex align-items-center">
+    <div class="header-menu"
+         (click)="menuActive = !menuActive"
+         [class.header-menu__active]="menuActive">
+      <span></span>
+    </div>
+    <div class="header-logo"><a routerLink="/">logo</a></div>
+  </div>
 </header>
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-2">
-      <nav class="nav pl-4">
+    <div class="col-12 col-lg-2">
+      <nav class="nav pl-4 mb-2 mb-sm-0" *ngIf="menuActive">
         <ul>
-          <li routerLinkActive="link-active"><a routerLink="/home">Главная</a></li>
-
           <li *ngIf="auth.isAuthenticated()" routerLinkActive="link-active"><a routerLink="/profile">Моя страница</a></li>
           <li *ngIf="auth.isAuthenticated()" routerLinkActive="link-active"><a routerLink="/collaborators">Сотрудники</a></li>
-          <li *ngIf="auth.isAuthenticated()" routerLinkActive="link-active"><a href="#">Руководство </a></li>
+          <li *ngIf="auth.isAuthenticated()" routerLinkActive="link-active"><a routerLink="/management">Руководство </a></li>
           <li *ngIf="!auth.isAuthenticated()" routerLinkActive="link-active"><a routerLink="/login">Авторизация</a></li>
           <li *ngIf="auth.isAuthenticated()"><a href="#" (click)="logout()">Выход</a></li>
         </ul>
       </nav>
     </div>
-    <div class="col-8">
+    <div class="col-12 col-lg-10">
       <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-

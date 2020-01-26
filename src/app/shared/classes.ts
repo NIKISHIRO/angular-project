@@ -6,6 +6,10 @@ export class Page {
   data: User[];
 }
 
+export class singleUser {
+  data: User;
+}
+
 export class User {
   constructor(email, firstName, lastName, avatar) {
     this.email = email;

@@ -72,29 +72,25 @@
 
   <!--  Шаблон подтверждения удаления-->
   <ng-template #collaboratorFormDelete>
-
     <div class="modal-header">
       <h4 class="modal-title">Удаление</h4>
       <button type="button" class="close" aria-label="Close" (click)="formEditModal.close()">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-
     <div class="modal-body">
       Вы уверены, что хотите удалить этого пользователя?
     </div>
-
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="modalDeleteClose()">Отмена</button>
       <button type="submit" class="btn btn-success btn-edit" (click)="modalDeleteConfirm()">Подтвердить</button>
     </div>
-
   </ng-template>
   <!--  /Шаблон подтверждения удаления-->
 
   <div class="container">
     <div class="row text-center">
-      <div class="col-4" *ngFor="let user of users">
+      <div class="col-sm-12 col-lg-6 col-xl-4" *ngFor="let user of users">
         <app-user
           [user]="user"
           (editClick)="onEditClick($event, collaboratorFormEdit)"

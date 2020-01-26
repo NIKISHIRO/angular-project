@@ -1,6 +1,8 @@
 .auth {
+  display: block;
   background-color: #fff;
   margin-top: 45px;
+  width: 300px;
 }
 
 .auth-center {
