@@ -4,6 +4,91 @@
 </div>
 <!--/Уведомление-->
 
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <button class="btn btn-success" (click)="addUser(collaboratorFormAdd)">Добавить нового пользователя</button>
+    </div>
+  </div>
+</div>
+
+
+<!--  Шаблон добавления пользователя-->
+<ng-template #collaboratorFormAdd>
+  <div class="modal-header">
+    <h4 class="modal-title">Добавление</h4>
+    <button type="button" class="close" aria-label="Close" (click)="formAddModal.close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <div class="collaborator-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <form class="collaborator-form">
+              <div class="user-form__avatar">
+                <img src="https://tanzolymp.com/images/default-non-user-no-photo-1.jpg" alt="Avatar">
+              </div>
+              <div class="form-group">
+                <label for="email2">Email address</label>
+                <input
+                  name="email"
+                  type="email"
+                  class="form-control"
+                  id="email2"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter email"
+                >
+              </div>
+              <div class="form-group">
+                <label for="firstname2">First Name</label>
+                <input
+                  name="firstname"
+                  type="text"
+                  class="form-control"
+                  id="firstname2"
+                  placeholder="First Name"
+                >
+              </div>
+              <div class="form-group">
+                <label for="lastname2">Last Name</label>
+                <input
+                  name="lastname"
+                  type="text"
+                  class="form-control"
+                  id="lastname2"
+                  placeholder="First Name"
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modalAddClose()">Отмена</button>
+    <button type="submit" class="btn btn-success btn-edit">Подтвердить</button>
+  </div>
+</ng-template>
+<!--  /Шаблон подтверждения удаления-->
+
+
+
+
+
+
+
+
+
+
+
 <h1 class="head-title-1">Все сотрудники</h1>
 <div class="collaborators">
   <!--Шаблон формы редактирвоания-->

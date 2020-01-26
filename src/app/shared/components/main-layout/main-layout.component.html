@@ -20,6 +20,7 @@
           <li *ngIf="!auth.isAuthenticated()" routerLinkActive="link-active"><a routerLink="/login">Авторизация</a></li>
           <li *ngIf="auth.isAuthenticated()"><a href="#" (click)="logout()">Выход</a></li>
         </ul>
+        <div class="date">{{date | date:'dd:mm:y hh:mm:ss'}}</div>
       </nav>
     </div>
     <div class="col-12 col-lg-10">

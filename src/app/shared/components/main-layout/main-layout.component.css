@@ -90,3 +90,8 @@
 .header-menu__active span::after {
   transform: rotate(-45deg);
 }
+
+.date {
+  font-size: 14px;
+  margin-top: 25px;
+}

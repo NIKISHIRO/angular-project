@@ -9,6 +9,7 @@
 .user-form__avatar img {
   border-radius: 100%;
   border: 1px solid #C0C0C0;
+  max-width: 160px;
 }
 
 .collaborator-form {

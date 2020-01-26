@@ -9,6 +9,7 @@ import {AuthService} from "../../auth.service";
 })
 export class MainLayoutComponent implements OnInit {
   menuActive: boolean = true;
+  date: Date = new Date();
 
   constructor(
     public auth: AuthService,
@@ -16,6 +17,9 @@ export class MainLayoutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    setInterval(() => {
+      this.date = new Date();
+    }, 1000);
   }
 
   logout() {

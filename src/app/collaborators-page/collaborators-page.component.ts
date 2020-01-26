@@ -15,6 +15,7 @@ export class CollaboratorsPageComponent implements OnInit {
 
   formEditModal;
   formDeleteModal;
+  formAddModal;
 
   alert: string = '';
 
@@ -71,5 +72,13 @@ export class CollaboratorsPageComponent implements OnInit {
       this.alert = 'Пользователь успешно удален!';
       setTimeout(() => this.alert = '', 5000);
     });
+  }
+
+  addUser(template) {
+    this.formAddModal = this.modalService.open(template);
+  }
+
+  modalAddClose() {
+    this.formAddModal.close();
   }
 }
